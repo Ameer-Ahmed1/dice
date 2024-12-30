@@ -73,7 +73,7 @@ function handleHold() {
     totalScores[activePlayer] += currentScores[activePlayer];
     score0El.textContent = totalScores[0];
     score1El.textContent = totalScores[1];
-    if (totalScores[activePlayer] >= 20) {
+    if (totalScores[activePlayer] >= 100) {
       declareWinner();
     } else {
       switchPlayer();
@@ -85,6 +85,7 @@ function handleRestart() {
   activePlayer = 0;
   currentScores = [0, 0];
   totalScores = [0, 0];
+  playing = true;
   player1El.classList.remove('player--active');
   player0El.classList.add('player--active');
   player0El.classList.remove('player--winner');
